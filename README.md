@@ -71,9 +71,8 @@ Além disso, estou aprimorando competências em gestão de riscos digitais, moni
 
 ### 🛠️ Meus Projetos
 
-#### **Análise de Dados de Incidentes de Segurança**
-Projeto voltado para análise de dados relacionados a incidentes de segurança da informação, utilizando Python e Power BI para identificar padrões, tendências e propor melhorias em processos de proteção de dados. O objetivo é apoiar a tomada de decisão estratégica e fortalecer a governança de informações em ambientes corporativos.
-
+#### **Análise de Dados Sensiveis**
+Este projeto representa meu primeiro desenvolvimento em Python, criado com fins educativos para otimizar a identificação automática de informações sensíveis em documentos jurídicos. A ferramenta foi especificamente projetada para auxiliar estudantes e profissionais do direito na pesquisa e análise de dados sensíveis, como CPF e CNPJ, em processos digitais e documentação legal.
 ###  🎓 Cursos & Certificados
 
 #### 🖥️ Cursos de Tecnologia
