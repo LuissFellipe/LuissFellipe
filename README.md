@@ -61,20 +61,7 @@ Além disso, estou aprimorando competências em gestão de riscos digitais, moni
     src="https://img.shields.io/badge/-Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black"
 />
 
-
-
-
-
-
-
-
-
-### 🛠️ Meus Projetos
-
-#### **Análise de Dados Sensiveis**
-Este projeto representa meu primeiro desenvolvimento em Python, criado com fins educativos para otimizar a identificação automática de informações sensíveis em documentos jurídicos. A ferramenta foi especificamente projetada para auxiliar estudantes e profissionais do direito na pesquisa e análise de dados sensíveis, como CPF e CNPJ, em processos digitais e documentação legal.
 ###  🎓 Cursos & Certificados
-
 #### 🖥️ Cursos de Tecnologia
 
 - **Conceitos Básicos de Redes** - Cisco Networking Academy  
