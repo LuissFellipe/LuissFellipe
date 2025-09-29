@@ -22,7 +22,7 @@ Além disso, estou aprimorando competências em gestão de riscos digitais, moni
             src="https://img.shields.io/badge/-Email-000?style=for-the-badge&logo=gmail&logoColor=white"
         />
     </a>
-    <a href="https://www.linkedin.com/in/luis-felipe-dias-analyst">
+    <a href="https://www.linkedin.com/in/luissfelipedias">
         <img 
             alt="LinkedIn" 
             title="Me acompanhe no LinkedIn" 
