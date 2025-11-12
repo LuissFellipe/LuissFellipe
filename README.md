@@ -51,11 +51,6 @@ Além disso, estou aprimorando competências em gestão de riscos digitais, moni
         src="https://img.shields.io/badge/-Jupyter-ff8c00?style=for-the-badge&logo=jupyter&logoColor=white"
     />
     <img 
-        alt="TensorFlow"
-        title="TensorFlow"
-        src="https://img.shields.io/badge/-TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white"
-    />
-    <img 
     alt="Power BI"
     title="Power BI"
     src="https://img.shields.io/badge/-Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black"
