@@ -33,6 +33,12 @@ Além disso, estou aprimorando competências em gestão de riscos digitais, moni
 
 ---
 
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?LuissFellipe=anuraghazra)](https://github.com/anuraghazra/github-readme-stats)
+
+
+
+
+
 ### 🤖 Linguagens e Tecnologias
 
 <img 
