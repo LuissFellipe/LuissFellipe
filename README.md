@@ -31,12 +31,7 @@ Além disso, estou aprimorando competências em gestão de riscos digitais, moni
 
 ---
 
-<table>
-  <tr>
-    <td valign="top">[![LuissFellipe's GitHub stats](https://github-readme-stats.vercel.app/api?username=LuissFellipe&theme=tokyonight&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)</td>
-    <td valign="top">![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=LuissFellipe&stats_format=bytes&layout=compact&theme=tokyonight)</td>
-  </tr>
-</table>
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=LuissFellipe&stats_format=bytes&layout=compact&theme=tokyonight)
 
 
 ### 🤖 Linguagens e Tecnologias
@@ -95,7 +90,7 @@ Além disso, estou aprimorando competências em gestão de riscos digitais, moni
 - **Proteção de Dados Pessoais no Setor Público** - Escola Nacional de Administração Pública  
   Agosto de 2024 | Certificado
 - **Understanding the Behavior of Consumer** - Miami Herbert School of Business | University of Miami  
-  Junho de 2025
+  Junho de 2Com o 25
 
 
 
