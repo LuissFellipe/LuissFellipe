@@ -33,7 +33,7 @@ Além disso, estou aprimorando competências em gestão de riscos digitais, moni
 
 ---
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=LuissFellipe&stats_format=bytes&layout=compact)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=LuissFellipe&stats_format=bytes&layout=compact&theme=tokyonight)
 
 
 ### 🤖 Linguagens e Tecnologias
