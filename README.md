@@ -1,7 +1,8 @@
 # 👨🏻‍💻 Luis Felipe
 
 
-### **`Analista de Dados`** Sou bacharelando em Direito e Engenharia de Software, com interesse em análise de dados e segurança da informação, buscando integrar conhecimentos jurídicos e tecnológicos para atuação em ambientes que exigem proteção e governança de dados. Tenho foco em segurança de bancos de dados, compliance digital, proteção de informações sensíveis e conformidade com a LGPD, desenvolvendo habilidades para análise estratégica e tomada de decisão baseada em dados confiáveis.
+### **`Analista de Dados`**
+Sou bacharelando em Direito e Engenharia de Software, com interesse em análise de dados e segurança da informação, buscando integrar conhecimentos jurídicos e tecnológicos para atuação em ambientes que exigem proteção e governança de dados. Tenho foco em segurança de bancos de dados, compliance digital, proteção de informações sensíveis e conformidade com a LGPD, desenvolvendo habilidades para análise estratégica e tomada de decisão baseada em dados confiáveis.
 
 Além disso, estou aprimorando competências em gestão de riscos digitais, monitoramento de processos, auditoria de dados e boas práticas de privacidade, com o objetivo de oferecer soluções que conciliem eficiência operacional e segurança jurídica. Minha meta é construir uma carreira que una Direito e Análise de Dados, atuando em proteção de dados pessoais, prevenção de incidentes de segurança e governança de informações em empresas e instituições que valorizem a segurança digital e a integridade das informações.
 
