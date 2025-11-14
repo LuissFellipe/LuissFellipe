@@ -33,8 +33,7 @@ Além disso, estou aprimorando competências em gestão de riscos digitais, moni
 
 ---
 
-[![LuissFellipe's GitHub stats](https://github-readme-stats.vercel.app/api?username=LuissFellipe)](https://github.com/anuraghazra/github-readme-stats)
-
+[![LuissFellipe's GitHub stats](https://github-readme-stats.vercel.app/api?username=LuissFellipe&theme=tokyonight)](https://github.com/anuraghazra/github-readme-stats)
 
 
 
