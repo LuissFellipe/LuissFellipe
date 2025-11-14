@@ -33,12 +33,8 @@ Além disso, estou aprimorando competências em gestão de riscos digitais, moni
 
 <table>
   <tr>
-    <td>
-      [![LuissFellipe's GitHub stats](https://github-readme-stats.vercel.app/api?username=LuissFellipe&theme=tokyonight&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)
-    </td>
-    <td>
-      ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=LuissFellipe&stats_format=bytes&layout=compact&theme=tokyonight)
-    </td>
+    <td valign="top">[![LuissFellipe's GitHub stats](https://github-readme-stats.vercel.app/api?username=LuissFellipe&theme=tokyonight&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)</td>
+    <td valign="top">![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=LuissFellipe&stats_format=bytes&layout=compact&theme=tokyonight)</td>
   </tr>
 </table>
 
