@@ -32,8 +32,6 @@ Além disso, estou aprimorando competências em gestão de riscos digitais, moni
 
 ---
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=LuissFellipe&stats_format=bytes&layout=compact&theme=tokyonight)
-
 
 ### 🤖 Linguagens e Tecnologias
 
@@ -51,11 +49,6 @@ Além disso, estou aprimorando competências em gestão de riscos digitais, moni
       alt="Jupyter Notebook"
       title="Jupyter Notebook"
       src="https://img.shields.io/badge/-Jupyter-ff8c00?style=for-the-badge&logo=jupyter&logoColor=white"
-  />
-  <img 
-  alt="Power BI"
-  title="Power BI"
-  src="https://img.shields.io/badge/-Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black"
 />
 
 ###  🎓 Cursos & Certificados
