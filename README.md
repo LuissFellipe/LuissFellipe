@@ -68,8 +68,6 @@ Além disso, estou aprimorando competências em gestão de riscos digitais, moni
   Julho de 2025 | Certificado
 - **Lógica de Programação Utilizando Python** - Estácio de Sá  
   Maio de 2024 | Certificado
-- **Microsoft Power BI Para Business Intelligence e Data Science** - Data Science Academy  
-  2025 | Certificado
 - **Python para Análise de Dados** - Data Science Academy  
   2025 | Certificado
 
