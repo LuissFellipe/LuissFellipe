@@ -10,6 +10,7 @@ Além disso, estou aprimorando competências em gestão de riscos digitais, moni
   <a href="https://www.instagram.com/ggomes.03">
       <img 
           alt="Instagram" 
+    
           title="Me siga no Instagram" 
           src="https://img.shields.io/badge/-Instagram-000?style=for-the-badge&logo=instagram&logoColor=white"
       />
