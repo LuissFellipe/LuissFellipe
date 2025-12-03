@@ -6,14 +6,8 @@ Sou bacharelando em Direito e Engenharia de Software, com interesse em análise 
 
 Além disso, estou aprimorando competências em gestão de riscos digitais, monitoramento de processos, auditoria de dados e boas práticas de privacidade, com o objetivo de oferecer soluções que conciliem eficiência operacional e segurança jurídica. Minha meta é construir uma carreira que una Direito e Análise de Dados, atuando em proteção de dados pessoais, prevenção de incidentes de segurança e governança de informações em empresas e instituições que valorizem a segurança digital e a integridade das informações.
 
-<p align="left">
-  <a href="https://www.instagram.com/ggomes.03">
-      <img 
-          alt="Instagram" 
+
     
-          title="Me siga no Instagram" 
-          src="https://img.shields.io/badge/-Instagram-000?style=for-the-badge&logo=instagram&logoColor=white"
-      />
   </a>
   <a href="mailto:luisfelipe.sec@gmail.com">
       <img 
