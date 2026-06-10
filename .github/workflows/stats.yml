@@ -1,0 +1,45 @@
+name: Update GitHub Stats
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: update-stats
+      cancel-in-progress: true  # Cancela a anterior, a mais recente vence
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+          fetch-depth: 0
+          ref: ${{ github.ref_name }}  # Garante o HEAD mais recente
+
+      - name: Generate Stats Card
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: stats
+          options: username=LuissFellipe&show_icons=true&theme=radical&count_private=true&locale=pt-br&layout=compact
+          path: profile/stats.svg
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Commit and Push
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add profile/stats.svg
+
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update GitHub stats [skip ci]"
+            git push origin HEAD:${{ github.ref_name }}
+          else
+            echo "Sem alterações."
+          fi
