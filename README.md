@@ -14,7 +14,8 @@
     </td>
     <td width="45%" align="left">
       <strong>Em aprendizado:</strong><br/>
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" width="40px" title="Java"/>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ruby/ruby-original.svg" width="40px" title="Ruby"/>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rails/rails-plain-wordmark.svg" width="40px" title="Ruby on Rails"/>
       <br/><br/>
       <strong>Linguagens:</strong><br/>
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="40px" title="Python"/>
@@ -36,7 +37,7 @@
 
 [![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=LuissFellipe&bg_color=000000&color=9b7ec4&line=7b5ea7&point=5B4282&area=true&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
 <br/>
-<img src="https://readme-typing-svg.herokuapp.com/?color=FFFFFF&size=25&center=true&vCenter=true&width=1000&lines=Java+%7C+Software+Engineering" />
+<img src="https://readme-typing-svg.herokuapp.com/?color=FFFFFF&size=25&center=true&vCenter=true&width=1000&lines=Data+Engineer" />
 <br/>
 <br/>
 
