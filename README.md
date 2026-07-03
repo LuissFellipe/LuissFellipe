@@ -37,7 +37,7 @@
 
 [![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=LuissFellipe&bg_color=000000&color=9b7ec4&line=7b5ea7&point=5B4282&area=true&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
 <br/>
-<img src="https://readme-typing-svg.herokuapp.com/?color=FFFFFF&size=25&center=true&vCenter=true&width=1000&lines=Data+Engineer" />
+<img src="https://readme-typing-svg.herokuapp.com/?color=FFFFFF&size=25&center=true&vCenter=true&width=1000&lines=Data+%26+Software+Engineer" />
 <br/>
 <br/>
 
