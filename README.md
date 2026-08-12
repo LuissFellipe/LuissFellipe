@@ -8,7 +8,7 @@
 <table border="0" width="100%">
   <tr>
     <td width="55%" align="center">
-      <img src="./profile/stats.svg?v=1" alt="GitHub Stats" />
+      <img src="https://github-readme-stats-three-virid-64.vercel.app/api?username=LuissFellipe&show_icons=true&theme=radical&locale=pt-br&layout=compact" alt="GitHub Stats" />
       <br/><br/>
       <img src="https://github-readme-stats-three-virid-64.vercel.app/api/top-langs/?username=LuissFellipe&layout=compact&theme=radical&locale=pt-br" alt="Top Langs" />
     </td>
