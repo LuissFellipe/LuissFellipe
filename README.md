@@ -1,6 +1,5 @@
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=5B4282&height=120&section=header"/>
 <div align="center">  
-<a href="mailto:luisfelipedias.dev@gmail.com" target="_blank"><img src="https://img.shields.io/badge/-Gmail-FFFFFF?style=for-the-badge&logo=gmail&logoColor=000000"/></a>
 <a href="https://www.instagram.com/dias.root/" target="_blank"><img src="https://img.shields.io/badge/-Instagram-FFFFFF?style=for-the-badge&logo=instagram&logoColor=000000"/></a>
 <a href="https://www.linkedin.com/in/luissfelipedias/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-FFFFFF?style=for-the-badge&logo=linkedin&logoColor=000000"/></a>
 <br/>
