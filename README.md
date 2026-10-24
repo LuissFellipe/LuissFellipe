@@ -1,5 +1,3 @@
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=5B4282&height=120&section=header"/>
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="profile/header-dark.svg">
   <img src="profile/header-light.svg" width="100%" alt="Luis Felipe Dias Gomes — Engenharia e Governança de Dados. Pipelines com dados públicos brasileiros, da coleta à página publicada, com a LGPD dentro do projeto.">
@@ -35,5 +33,3 @@ Sou Analista de Dados, graduando em Engenharia de Software e em Direito, e traba
 </picture>
 
 <sub>Certificado de inglês verificável em [cert.efset.org/en/W1vNup](https://cert.efset.org/en/W1vNup).</sub>
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=5B4282&height=120&section=footer"/>
