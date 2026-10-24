@@ -12,8 +12,8 @@
 ### Stack
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="profile/stack-dark-compacta.svg">
-  <img src="profile/stack-light-compacta.svg" width="100%" alt="Stack — Linguagens: Python, SQL, JavaScript, TypeScript, Ruby, Ruby on Rails. Dados: PostgreSQL, DuckDB, dbt, Apache Spark, Pandas, Jupyter, Grafana, Streamlit. Orquestração: Apache Airflow, Docker, GitHub Actions, Git, Linux. Governança: LGPD, minimização, retenção, controle de acesso, anonimização, arquitetura medalhão.">
+  <source media="(prefers-color-scheme: dark)" srcset="profile/stack-dark-compacta-2.svg">
+  <img src="profile/stack-light-compacta-2.svg" width="100%" alt="Stack — Linguagens: Python, SQL, JavaScript, TypeScript, Ruby, Rails. Dados: PostgreSQL, DuckDB, dbt, Apache Spark, Pandas, Jupyter, Grafana, Streamlit. Orquestração: Apache Airflow, Docker, GitHub Actions, Git, Linux. Governança: LGPD, minimização, retenção, controle de acesso, anonimização, arquitetura medalhão.">
 </picture>
 
 ### Estatísticas

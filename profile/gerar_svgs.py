@@ -177,7 +177,7 @@ LOGOS = Path(sys.argv[3]) if len(sys.argv) > 3 else None
 STACK = [
     ("Linguagens", [("Python", "python-original"), ("SQL", "sql"), ("JavaScript", "javascript-original"),
                     ("TypeScript", "typescript-original"), ("Ruby", "ruby-original"),
-                    ("Ruby on Rails", "rails-plain")]),
+                    ("Rails", "rails-plain")]),
     ("Dados", [("PostgreSQL", "postgresql-original"), ("DuckDB", "duckdb-original"), ("dbt", "dbt-original"),
                ("Apache Spark", "apachespark-original"), ("Pandas", "pandas-original"),
                ("Jupyter", "jupyter-original"), ("Grafana", "grafana-original"),
@@ -225,13 +225,13 @@ def icone(arq, x, y, tam, n, t):
 
 
 def stack(t):
-    W, x_rot, x_ini, ico, tam, gap, alt = 1000, 0, 150, 20, 14.5, 22, 32
+    W, x_rot, x_ini, ico, tam, gap, alt = 1000, 0, 160, 24, 17, 26, 38
     p, y, n = [], 0, 0
     for g, (grupo, itens) in enumerate(STACK):
         if g:
             p.append(f'<path d="M0 {y}H{W}" stroke="{t["borda"]}"/>')
         y += 6
-        p.append(MONO.path(grupo.upper(), x_rot, y + alt / 2 + 4, 12.5, t["laranja"], espaco=0.08))
+        p.append(MONO.path(grupo.upper(), x_rot, y + alt / 2 + 5, 14, t["laranja"], espaco=0.08))
         x = x_ini
         for rotulo, arq in itens:
             w = ico + 11 + MONO.largura(rotulo, tam)
@@ -325,6 +325,6 @@ def formacao(t):
 for nome_tema, t in TEMAS.items():
     t["nome"] = nome_tema
     (SAIDA / f"header-{nome_tema}-2.svg").write_text(cabecalho(t))
-    (SAIDA / f"stack-{nome_tema}-compacta.svg").write_text(stack(t))
+    (SAIDA / f"stack-{nome_tema}-compacta-2.svg").write_text(stack(t))
     (SAIDA / f"formacao-{nome_tema}-3.svg").write_text(formacao(t))
 print("ok", len(list(SAIDA.glob("*.svg"))), "svgs")
