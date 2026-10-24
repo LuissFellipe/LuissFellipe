@@ -129,10 +129,12 @@ def cabecalho(t):
     p.append(DISPLAY.path("Luis Felipe", x0 - 4, 158, 92, t["tinta"], espaco=-0.025))
     p.append(ITALICO.path("Dias Gomes", x0, 228, 64, t["roxo_txt"]))
 
-    frase = ("Construo pipelines com dados públicos brasileiros, da coleta à página "
-             "publicada, com a LGPD dentro do projeto desde o começo.")
+    frase = ("Sou Analista de Dados, graduando em Engenharia de Software e em Direito, "
+             "e trabalho com Engenharia e Governança de Dados.")
+    linhas = TEXTO.quebrar(frase, 17, 575)
+    assert len(linhas) <= 2, linhas  # a terceira linha cairia em cima da linhagem
     y = 272
-    for linha in TEXTO.quebrar(frase, 17, 560):
+    for linha in linhas:
         p.append(TEXTO.path(linha, x0, y, 17, t["suave"]))
         y += 25
 
@@ -297,7 +299,7 @@ def formacao(t):
 
 for nome_tema, t in TEMAS.items():
     t["nome"] = nome_tema
-    (SAIDA / f"header-{nome_tema}.svg").write_text(cabecalho(t))
+    (SAIDA / f"header-{nome_tema}-2.svg").write_text(cabecalho(t))
     (SAIDA / f"stack-{nome_tema}-compacta.svg").write_text(stack(t))
     (SAIDA / f"formacao-{nome_tema}.svg").write_text(formacao(t))
 print("ok", len(list(SAIDA.glob("*.svg"))), "svgs")

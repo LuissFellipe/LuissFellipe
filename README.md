@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="profile/header-dark.svg">
-  <img src="profile/header-light.svg" width="100%" alt="Luis Felipe Dias Gomes — Engenharia e Governança de Dados. Pipelines com dados públicos brasileiros, da coleta à página publicada, com a LGPD dentro do projeto.">
+  <source media="(prefers-color-scheme: dark)" srcset="profile/header-dark-2.svg">
+  <img src="profile/header-light-2.svg" width="100%" alt="Luis Felipe Dias Gomes — Engenharia e Governança de Dados. Sou Analista de Dados, graduando em Engenharia de Software e em Direito, e trabalho com Engenharia e Governança de Dados.">
 </picture>
 
 <p align="center">
@@ -8,8 +8,6 @@
   <a href="https://www.linkedin.com/in/luissfelipedias/"><img src="https://img.shields.io/badge/linkedin-5B4282?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik00Ljk4IDMuNWEyLjUgMi41IDAgMSAxIDAgNSAyLjUgMi41IDAgMCAxIDAtNXpNMyA5LjVoNFYyMUgzek05LjUgOS41aDMuOHYxLjZoLjFjLjUtMSAxLjgtMiAzLjgtMiA0IDAgNC44IDIuNiA0LjggNlYyMWgtNHYtNS4xYzAtMS4yIDAtMi44LTEuNy0yLjhzLTIgMS4zLTIgMi43VjIxaC00eiIvPjwvc3ZnPg%3D%3D" height="36" alt="LinkedIn"></a>
   <a href="https://www.instagram.com/dias.root/"><img src="https://img.shields.io/badge/instagram-5B4282?style=for-the-badge&logo=instagram&logoColor=white" height="36" alt="Instagram"></a>
 </p>
-
-Sou Analista de Dados, graduando em Engenharia de Software e em Direito, e trabalho com Engenharia e Governança de Dados.
 
 ### Stack
 
