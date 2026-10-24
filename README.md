@@ -1,3 +1,5 @@
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=5B4282&height=120&section=header"/>
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="profile/header-dark.svg">
   <img src="profile/header-light.svg" width="100%" alt="Luis Felipe Dias Gomes — Engenharia e Governança de Dados. Pipelines com dados públicos brasileiros, da coleta à página publicada, com a LGPD dentro do projeto.">
@@ -15,8 +17,15 @@ Graduando em Engenharia de Software e em Direito, trabalho com Engenharia e Gove
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="profile/stack-dark.svg">
-  <img src="profile/stack-light.svg" width="100%" alt="Stack — Orquestração e transformação: Airflow, dbt, Apache Spark, ETL/ELT, arquitetura medalhão. Bancos e análise: PostgreSQL, PostGIS, DuckDB, SQL, Python, pandas, Jupyter. Entrega e operação: Docker, GitHub Actions, GitHub Pages, Grafana, Streamlit, Linux. Governança: LGPD, minimização, retenção, controle de acesso, anonimização.">
+  <img src="profile/stack-light.svg" width="100%" alt="Stack — Linguagens: Python, SQL, JavaScript, TypeScript, Ruby, Rails. Dados: PostgreSQL, DuckDB, dbt, Airflow, Spark, pandas, Jupyter. Entrega: Docker, GitHub Actions, Grafana, Streamlit, Git, Linux. Governança: LGPD, minimização, retenção, controle de acesso, anonimização, arquitetura medalhão.">
 </picture>
+
+### Estatísticas
+
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-three-virid-64.vercel.app/api?username=LuissFellipe&show_icons=true&layout=compact&disable_animations=true&card_width=480&locale=pt-br&bg_color=17121F&title_color=BDA4EC&text_color=F3EFFA&icon_color=FF8A3D&ring_color=BDA4EC&border_color=2F2640"><img src="https://github-readme-stats-three-virid-64.vercel.app/api?username=LuissFellipe&show_icons=true&layout=compact&disable_animations=true&card_width=480&locale=pt-br&bg_color=F7F4FC&title_color=5B4282&text_color=1E1828&icon_color=E2620E&ring_color=5B4282&border_color=E2DAEF" height="170" alt="Estatísticas do GitHub"></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-three-virid-64.vercel.app/api/top-langs/?username=LuissFellipe&layout=compact&disable_animations=true&card_width=420&locale=pt-br&bg_color=17121F&title_color=BDA4EC&text_color=F3EFFA&icon_color=FF8A3D&ring_color=BDA4EC&border_color=2F2640"><img src="https://github-readme-stats-three-virid-64.vercel.app/api/top-langs/?username=LuissFellipe&layout=compact&disable_animations=true&card_width=420&locale=pt-br&bg_color=F7F4FC&title_color=5B4282&text_color=1E1828&icon_color=E2620E&ring_color=5B4282&border_color=E2DAEF" height="170" alt="Linguagens mais usadas"></picture>
+</p>
 
 ### Formação e certificações
 
@@ -26,3 +35,5 @@ Graduando em Engenharia de Software e em Direito, trabalho com Engenharia e Gove
 </picture>
 
 <sub>Certificado de inglês verificável em [cert.efset.org/en/W1vNup](https://cert.efset.org/en/W1vNup).</sub>
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=5B4282&height=120&section=footer"/>

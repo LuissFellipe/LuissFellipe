@@ -1,6 +1,7 @@
 """Gera os SVGs do README de perfil (claro e escuro), com o texto convertido
 em contornos: imagem de README não carrega fonte externa, então a letra vai
 desenhada no próprio arquivo."""
+import re
 import sys
 from pathlib import Path
 
@@ -70,12 +71,12 @@ TEMAS = {
     "light": dict(
         fundo="#F7F4FC", grade="#E9E3F3", borda="#E2DAEF", tinta="#1E1828",
         suave="#5F5672", roxo="#5B4282", roxo_txt="#4B3470", laranja="#E2620E",
-        cartao="#FFFFFF", sombra="#1E1828", chip="#EEE8F7",
+        cartao="#FFFFFF", sombra="#1E1828", chip="#EEE8F7", ladrilho="#FFFFFF",
     ),
     "dark": dict(
         fundo="#17121F", grade="#231C2E", borda="#2F2640", tinta="#F3EFFA",
         suave="#ABA1BE", roxo="#7B5CB0", roxo_txt="#BDA4EC", laranja="#FF8A3D",
-        cartao="#211A2C", sombra="#000000", chip="#2A2238",
+        cartao="#211A2C", sombra="#000000", chip="#2A2238", ladrilho="#F3EFFA",
     ),
 }
 
@@ -168,34 +169,66 @@ def cabecalho(t):
 
 
 # ---------------------------------------------------------------- stack
+LOGOS = Path(sys.argv[3]) if len(sys.argv) > 3 else None
+
 STACK = [
-    ("Orquestração e transformação", ["Airflow", "dbt", "Apache Spark", "ETL/ELT", "arquitetura medalhão"]),
-    ("Bancos e análise", ["PostgreSQL", "PostGIS", "DuckDB", "SQL", "Python", "pandas", "Jupyter"]),
-    ("Entrega e operação", ["Docker", "GitHub Actions", "GitHub Pages", "Grafana", "Streamlit", "Linux"]),
-    ("Governança", ["LGPD", "minimização", "retenção", "controle de acesso", "anonimização"]),
+    ("Linguagens", [("Python", "python-original"), ("SQL", None), ("JavaScript", "javascript-original"),
+                    ("TypeScript", "typescript-original"), ("Ruby", "ruby-original"), ("Rails", "rails-plain")]),
+    ("Dados", [("PostgreSQL", "postgresql-original"), ("DuckDB", "duckdb-original"), ("dbt", "dbt-original"),
+               ("Airflow", "apacheairflow-original"), ("Spark", "apachespark-original"),
+               ("pandas", "pandas-original"), ("Jupyter", "jupyter-original")]),
+    ("Entrega", [("Docker", "docker-original"), ("Actions", "githubactions-original"),
+                 ("Grafana", "grafana-original"), ("Streamlit", "streamlit-original"),
+                 ("Git", "git-original"), ("Linux", "linux-original")]),
 ]
+GOVERNANCA = ["LGPD", "minimização", "retenção", "controle de acesso", "anonimização", "arquitetura medalhão"]
+
+
+def logo(nome, x, y, tam, n):
+    # o SVG do logotipo vai embutido: imagem de README não carrega arquivo externo
+    bruto = (LOGOS / f"{nome}.svg").read_text()
+    vb = re.search(r'viewBox="([^"]+)"', bruto).group(1)
+    corpo = re.sub(r"^.*?<svg[^>]*>|</svg>\s*$", "", bruto, flags=re.S)
+    corpo = re.sub(r'id="([^"]+)"', rf'id="l{n}-\1"', corpo)
+    corpo = re.sub(r"url\(#([^)]+)\)", rf"url(#l{n}-\1)", corpo)
+    corpo = re.sub(r'href="#([^"]+)"', rf'href="#l{n}-\1"', corpo)
+    return f'<svg x="{x:.1f}" y="{y:.1f}" width="{tam}" height="{tam}" viewBox="{vb}">{corpo}</svg>'
 
 
 def stack(t):
-    W = 1000
-    p, y = [], 36
+    W, x_rot, x_ini, passo, lado = 1000, 40, 250, 104, 64
+    p, y, n = [], 34, 0
     for grupo, itens in STACK:
-        p.append(MONO.path(grupo.upper(), 40, y + 18, 12, t["laranja"], espaco=0.08))
-        x = 300
-        for it in itens:
-            w = MONO.largura(it, 13.5) + 24
-            if x + w > W - 40:
-                x = 300
-                y += 40
-            c, w = chip(x, y, it, t, 13.5, fundo=t["chip"], cor=t["tinta"])
-            p.append(c)
-            x += w + 10
-        y += 56
-    H = y - 8
+        p.append(MONO.path(grupo.upper(), x_rot, y + lado / 2 + 4, 12.5, t["laranja"], espaco=0.08))
+        for i, (rotulo, arq) in enumerate(itens):
+            cx = x_ini + i * passo + passo / 2
+            x = cx - lado / 2
+            p.append(f'<rect x="{x:.1f}" y="{y}" width="{lado}" height="{lado}" rx="16" '
+                     f'fill="{t["ladrilho"]}" stroke="{t["borda"]}"/>')
+            if arq:
+                p.append(logo(arq, x + 13, y + 13, lado - 26, n))
+                n += 1
+            else:
+                p.append(DISPLAY.path(rotulo, cx, y + lado / 2 + 7, 19, t["roxo"], ancora="middle"))
+            p.append(MONO.path(rotulo, cx, y + lado + 22, 12, t["tinta"], ancora="middle"))
+        y += lado + 50
+    p.append(f'<path d="M40 {y - 6}H{W - 40}" stroke="{t["borda"]}"/>')
+    y += 22
+    p.append(MONO.path("GOVERNANÇA", x_rot, y + 20, 12.5, t["laranja"], espaco=0.08))
+    x = x_ini + (passo - lado) / 2
+    for it in GOVERNANCA:
+        if x + MONO.largura(it, 13) + 20 > W - 40:
+            x = x_ini + (passo - lado) / 2
+            y += 38
+        c, w = chip(x, y, it, t, 13, fundo=t["chip"], cor=t["tinta"])
+        p.append(c)
+        x += w + 10
+    H = y + 58
     fundo = (f'<rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="16" '
              f'fill="{t["fundo"]}" stroke="{t["borda"]}"/>')
-    return svg(W, H, fundo + "".join(p), "Stack: " + "; ".join(
-        f"{g}: {', '.join(i)}" for g, i in STACK))
+    desc = "Stack: " + "; ".join(f"{g}: {', '.join(r for r, _ in i)}" for g, i in STACK) + \
+        "; Governança: " + ", ".join(GOVERNANCA)
+    return svg(W, H, fundo + "".join(p), desc)
 
 
 # ---------------------------------------------------------------- formação
