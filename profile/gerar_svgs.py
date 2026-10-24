@@ -167,62 +167,6 @@ def cabecalho(t):
     return svg(W, H, "".join(p), "Luis Felipe Dias Gomes — Engenharia e Governança de Dados")
 
 
-# ---------------------------------------------------------------- projetos
-PROJETOS = [
-    ("energia", "Energia Desperdiçada", "ONS · 2021–2026", "37,2 TWh",
-     "de energia eólica e solar cortada pelo ONS em 2025, 21% do que as usinas poderiam gerar.",
-     ["Airflow", "dbt", "DuckDB"]),
-    ("golpe", "O golpe que o Brasil não sabe contar", "ANUÁRIO FBSP · 2023–2026", "21,1% → 11,1%",
-     "Alta do estelionato eletrônico em 2025: a publicada, e a dos 18 estados que informam desde 2021.",
-     ["dbt", "DuckDB", "ECharts"]),
-    ("ferrovias", "Carga nas Ferrovias", "ANTT · 2006–2026", "−22%",
-     "foi a queda da carga da MRS em 2019, depois de Brumadinho. Em 2025, ela levou 153,2 mi t.",
-     ["PostGIS", "dbt", "Comex Stat"]),
-    ("queimadas", "Monitor de Queimadas", "INPE · ATUALIZA TODO DIA", "278.299",
-     "focos de calor em 2024, o pior ano da série. Cada foco ligado ao município por spatial join.",
-     ["PostGIS", "dbt", "GitHub Actions"]),
-    ("indices", "Consultor de índices", "INSTACART · 33,8 MI DE ITENS", "170 s → 13,9 s",
-     "de consulta por hora com os 2 índices que o algoritmo escolheu entre 35 candidatos.",
-     ["PostgreSQL", "HypoPG", "Python"]),
-    ("salarios", "Salários em dados", "STATE OF DATA · 2019–2025", "−6,6%",
-     "no salário real do mesmo perfil entre 2021 e 2025, enquanto a mediana bruta subiu 20%.",
-     ["Python", "Jupyter", "regressão"]),
-    ("bcb", "Pipeline BCB", "BANCO CENTRAL · TODO DIA ÚTIL", "21 meses",
-     "de juro real negativo entre jul/2020 e abr/2022. Testado contra o IPCA oficial do IBGE.",
-     ["PostgreSQL", "dbt", "Docker"]),
-    ("enem", "Análise do ENEM 2023", "INEP · MICRODADOS", "28,0%",
-     "da variação da nota é explicada por renda familiar e tipo de escola, juntos.",
-     ["DuckDB", "Python"]),
-]
-
-
-def cartao_projeto(t, titulo, fonte, numero, legenda, stack):
-    W, H = 480, 300
-    p = [f'<rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="16" fill="{t["fundo"]}" stroke="{t["borda"]}"/>']
-    x = 28
-    p.append(asterisco(x + 6, 40, 6, t["laranja"], 2.4))
-    p.append(MONO.path(fonte.upper(), x + 20, 44.5, 11.5, t["laranja"], espaco=0.08))
-    tam_t = 23
-    while TITULO.largura(titulo, tam_t) > W - 2 * x:
-        tam_t -= 1
-    p.append(TITULO.path(titulo, x, 82, tam_t, t["tinta"]))
-    tam_n = 54
-    while DISPLAY.largura(numero, tam_n, -0.02) > W - 2 * x:
-        tam_n -= 2
-    p.append(DISPLAY.path(numero, x - 2, 150, tam_n, t["roxo_txt"], espaco=-0.02))
-    y = 184
-    for linha in TEXTO.quebrar(legenda, 15.5, W - 2 * x)[:3]:
-        p.append(TEXTO.path(linha, x, y, 15.5, t["suave"]))
-        y += 22
-    cx = x
-    for s in stack:
-        c, w = chip(cx, H - 50, s, t, 12)
-        p.append(c)
-        cx += w + 8
-    p.append(MONO.path("código ↗", W - x, H - 32, 12.5, t["roxo_txt"], ancora="end"))
-    return svg(W, H, "".join(p), f"{titulo}: {numero} {legenda}")
-
-
 # ---------------------------------------------------------------- stack
 STACK = [
     ("Orquestração e transformação", ["Airflow", "dbt", "Apache Spark", "ETL/ELT", "arquitetura medalhão"]),
@@ -306,6 +250,4 @@ for nome_tema, t in TEMAS.items():
     (SAIDA / f"header-{nome_tema}.svg").write_text(cabecalho(t))
     (SAIDA / f"stack-{nome_tema}.svg").write_text(stack(t))
     (SAIDA / f"formacao-{nome_tema}.svg").write_text(formacao(t))
-    for slug, *dados in PROJETOS:
-        (SAIDA / f"{slug}-{nome_tema}.svg").write_text(cartao_projeto(t, *dados))
 print("ok", len(list(SAIDA.glob("*.svg"))), "svgs")
