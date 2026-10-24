@@ -281,6 +281,6 @@ def formacao(t):
 
 for nome_tema, t in TEMAS.items():
     (SAIDA / f"header-{nome_tema}.svg").write_text(cabecalho(t))
-    (SAIDA / f"stack-{nome_tema}.svg").write_text(stack(t))
+    (SAIDA / f"stack-logos-{nome_tema}.svg").write_text(stack(t))
     (SAIDA / f"formacao-{nome_tema}.svg").write_text(formacao(t))
 print("ok", len(list(SAIDA.glob("*.svg"))), "svgs")
