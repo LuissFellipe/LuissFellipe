@@ -253,53 +253,78 @@ def stack(t):
 FORMACAO = [
     ("Engenharia de Software", "Universidade Estácio de Sá", "2025–2029"),
     ("Direito", "Universidade Salgado de Oliveira", "2022–2027"),
-    ("Gestão de Segurança Pública e Privada", "Faculdade Aliança de Itaberaí · sequencial", "840 h"),
+    ("Gestão de Segurança Pública e Privada", "Faculdade Aliança de Itaberaí", "sequencial · 840 h"),
 ]
-CERTS = [
-    ("Inglês C1 Advanced · 61/100", "EF SET", "2025"),
-    ("Engenharia de Dados e IA para Gestores de TIC — Eixo 1", "ENAP · nota 100", "44 h"),
-    ("Como implementar a LGPD", "ENAP", "25 h"),
+CERT_TEC = [
+    ("Engenharia de Dados e IA para Gestores de TIC", "ENAP · Eixo 1 · nota 100", "44 h"),
     ("Fundamentos de Engenharia de Dados", "Data Science Academy", "24 h"),
     ("Python do Básico a Aplicações de IA", "Data Science Academy", "96 h"),
     ("Python para Análise de Dados, Data Science e ML", "Data Science Academy", "64 h"),
     ("Inteligência Artificial I: redes neurais", "IFTM", "40 h"),
-    ("Introdução à IA Generativa", "MIT Professional Education", "2025"),
+    ("Java Básico", "Loiane Training", "30 h"),
+    ("Introdução à IA Generativa", "MIT Professional Education", "8 h"),
 ]
+CERT_DIR = [
+    ("Como implementar a LGPD", "ENAP", "25 h"),
+    ("Direito Administrativo", "IFRS", "40 h"),
+    ("Direito do Trabalho", "IFRS", "40 h"),
+    ("Direito Empresarial", "IFRS", "30 h"),
+    ("Direito e Legislação Ambiental", "IFRS", "30 h"),
+    ("Direito Público", "IFRS", "20 h"),
+]
+IDIOMA = [("Inglês C1 Advanced · 61/100", "EF SET", "2025")]
+
+
+def lista_cert(t, p, x, y, largura, rotulo, itens):
+    p.append(MONO.path(rotulo, x, y, 12, t["laranja"], espaco=0.08))
+    y += 36
+    for nome, inst, carga in itens:
+        linhas = TEXTO_B.quebrar(nome, 15, largura - 60)
+        for i, l in enumerate(linhas):
+            p.append(TEXTO_B.path(l, x, y + i * 20, 15, t["tinta"]))
+        p.append(MONO.path(carga, x + largura, y, 12.5, t["roxo_txt"], ancora="end"))
+        y += 20 * (len(linhas) - 1)
+        p.append(TEXTO.path(inst, x, y + 20, 13, t["suave"]))
+        y += 46
+    return y
 
 
 def formacao(t):
     W = 1000
-    p = []
-    p.append(MONO.path("FORMAÇÃO", 40, 54, 12, t["laranja"], espaco=0.08))
-    y = 92
-    for nome, inst, quando in FORMACAO:
-        for i, linha in enumerate(TITULO.quebrar(nome, 19, 300)):
-            p.append(TITULO.path(linha, 40, y + i * 24, 19, t["tinta"]))
-        y += 24 * (len(TITULO.quebrar(nome, 19, 300)) - 1)
-        p.append(TEXTO.path(inst, 40, y + 23, 14, t["suave"]))
-        p.append(MONO.path(quando, 40, y + 44, 12.5, t["roxo_txt"]))
-        y += 82
-    p.append(f'<path d="M392 40V{y - 30}" stroke="{t["borda"]}"/>')
-
-    xc = 430
-    p.append(MONO.path("CERTIFICAÇÕES", xc, 54, 12, t["laranja"], espaco=0.08))
-    yc = 92
-    for nome, inst, carga in CERTS:
-        p.append(TEXTO_B.path(nome, xc, yc, 15.5, t["tinta"]))
-        p.append(TEXTO.path(inst, xc, yc + 21, 13.5, t["suave"]))
-        p.append(MONO.path(carga, W - 40, yc, 13, t["roxo_txt"], ancora="end"))
-        yc += 50
-    H = max(y, yc) - 10
+    p = [MONO.path("FORMAÇÃO", 40, 50, 12, t["laranja"], espaco=0.08)]
+    col = (W - 80) / 3
+    yf = 0
+    for i, (nome, inst, quando) in enumerate(FORMACAO):
+        x, y = 40 + i * col, 88
+        linhas = TITULO.quebrar(nome, 19, col - 24)
+        for j, l in enumerate(linhas):
+            p.append(TITULO.path(l, x, y + j * 23, 19, t["tinta"]))
+        y += 23 * (len(linhas) - 1)
+        p.append(TEXTO.path(inst, x, y + 23, 13.5, t["suave"]))
+        p.append(MONO.path(quando, x, y + 44, 12.5, t["roxo_txt"]))
+        yf = max(yf, y + 44)
+    y0 = yf + 34
+    p.append(f'<path d="M40 {y0}H{W - 40}" stroke="{t["borda"]}"/>')
+    larg = (W - 80 - 60) / 2
+    xa, xb = 40, 40 + larg + 60
+    ya = lista_cert(t, p, xa, y0 + 42, larg, "TECNOLOGIA", CERT_TEC)
+    yb = lista_cert(t, p, xb, y0 + 42, larg, "DIREITO", CERT_DIR)
+    yb = lista_cert(t, p, xb, yb + 8, larg, "IDIOMA", IDIOMA)
+    p.append(f'<path d="M{xb - 30} {y0 + 26}V{max(ya, yb) - 30}" stroke="{t["borda"]}"/>')
+    H = max(ya, yb) - 6
     fundo = (f'<rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="16" '
              f'fill="{t["fundo"]}" stroke="{t["borda"]}"/>')
-    desc = "Formação: " + "; ".join(f"{a}, {b}" for a, b, _ in FORMACAO) + \
-        ". Certificações: " + "; ".join(f"{a}, {b}" for a, b, _ in CERTS)
+    desc = ("Formação: " + "; ".join(f"{a}, {b}" for a, b, _ in FORMACAO)
+            + ". Tecnologia: " + "; ".join(f"{a} ({b}, {c})" for a, b, c in CERT_TEC)
+            + ". Direito: " + "; ".join(f"{a} ({b}, {c})" for a, b, c in CERT_DIR)
+            + ". Idioma: Inglês C1 Advanced, EF SET")
     return svg(W, H, fundo + "".join(p), desc)
+
 
 
 for nome_tema, t in TEMAS.items():
     t["nome"] = nome_tema
     (SAIDA / f"header-{nome_tema}-2.svg").write_text(cabecalho(t))
     (SAIDA / f"stack-{nome_tema}-compacta.svg").write_text(stack(t))
-    (SAIDA / f"formacao-{nome_tema}.svg").write_text(formacao(t))
+    (SAIDA / f"formacao-{nome_tema}-2.svg").write_text(formacao(t))
 print("ok", len(list(SAIDA.glob("*.svg"))), "svgs")
