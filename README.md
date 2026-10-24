@@ -11,7 +11,7 @@
   <a href="https://www.instagram.com/dias.root/"><img src="https://img.shields.io/badge/instagram-5B4282?style=flat-square&logo=instagram&logoColor=white" alt="Instagram"></a>
 </p>
 
-Graduando em Engenharia de Software e em Direito, trabalho com Engenharia e Governança de Dados. Hoje sou Analista de Automação e Dados na JM L. Profissional.
+Sou Analista de Dados, graduando em Engenharia de Software e em Direito, e trabalho com Engenharia e Governança de Dados.
 
 ### Stack
 
