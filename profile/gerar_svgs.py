@@ -223,12 +223,12 @@ def icone(arq, x, y, tam, n, t):
 
 
 def stack(t):
-    W, x_rot, x_ini, ico, tam, gap, alt = 1000, 40, 230, 22, 15, 36, 46
-    p, y, n = [], 24, 0
+    W, x_rot, x_ini, ico, tam, gap, alt = 1000, 0, 150, 20, 14.5, 22, 32
+    p, y, n = [], 0, 0
     for g, (grupo, itens) in enumerate(STACK):
         if g:
-            p.append(f'<path d="M24 {y}H{W - 24}" stroke="{t["borda"]}"/>')
-        y += 14
+            p.append(f'<path d="M0 {y}H{W}" stroke="{t["borda"]}"/>')
+        y += 6
         p.append(MONO.path(grupo.upper(), x_rot, y + alt / 2 + 4, 12.5, t["laranja"], espaco=0.08))
         x = x_ini
         for rotulo, arq in itens:
@@ -240,10 +240,9 @@ def stack(t):
             n += 1
             p.append(MONO.path(rotulo, x + ico + 11, y + alt / 2 + tam * 0.36, tam, t["tinta"]))
             x += w + gap
-        y += alt + 14
-    H = y + 10
-    fundo = (f'<rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="16" '
-             f'fill="{t["fundo"]}" stroke="{t["borda"]}"/>')
+        y += alt + 6
+    H = y
+    fundo = ""  # sem painel: a lista fica direto no fundo do GitHub
     desc = "Stack — " + ". ".join(f"{g}: {', '.join(r for r, _ in i)}" for g, i in STACK)
     return svg(W, H, fundo + "".join(p), desc)
 
@@ -299,6 +298,6 @@ def formacao(t):
 for nome_tema, t in TEMAS.items():
     t["nome"] = nome_tema
     (SAIDA / f"header-{nome_tema}.svg").write_text(cabecalho(t))
-    (SAIDA / f"stack-lista-{nome_tema}.svg").write_text(stack(t))
+    (SAIDA / f"stack-{nome_tema}-compacta.svg").write_text(stack(t))
     (SAIDA / f"formacao-{nome_tema}.svg").write_text(formacao(t))
 print("ok", len(list(SAIDA.glob("*.svg"))), "svgs")
