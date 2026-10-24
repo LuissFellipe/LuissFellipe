@@ -4,9 +4,9 @@
 </picture>
 
 <p align="center">
-  <a href="https://luisfelipe-omega.vercel.app"><img src="https://img.shields.io/badge/portf%C3%B3lio-5B4282?style=flat-square&logo=vercel&logoColor=white" alt="Portfólio"></a>
-  <a href="https://www.linkedin.com/in/luissfelipedias/"><img src="https://img.shields.io/badge/linkedin-5B4282?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-  <a href="https://www.instagram.com/dias.root/"><img src="https://img.shields.io/badge/instagram-5B4282?style=flat-square&logo=instagram&logoColor=white" alt="Instagram"></a>
+  <a href="https://luisfelipe-omega.vercel.app"><img src="https://img.shields.io/badge/portf%C3%B3lio-5B4282?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik05IDNoNmEyIDIgMCAwIDEgMiAydjFoM2EyIDIgMCAwIDEgMiAydjRIMlY4YTIgMiAwIDAgMSAyLTJoM1Y1YTIgMiAwIDAgMSAyLTJ6bTAgM2g2VjVIOXYxek0yIDEzLjVoOFYxNWExIDEgMCAwIDAgMSAxaDJhMSAxIDAgMCAwIDEtMXYtMS41aDhWMTlhMiAyIDAgMCAxLTIgMkg0YTIgMiAwIDAgMS0yLTJ6Ii8%2BPC9zdmc%2B" height="36" alt="Portfólio"></a>
+  <a href="https://www.linkedin.com/in/luissfelipedias/"><img src="https://img.shields.io/badge/linkedin-5B4282?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik00Ljk4IDMuNWEyLjUgMi41IDAgMSAxIDAgNSAyLjUgMi41IDAgMCAxIDAtNXpNMyA5LjVoNFYyMUgzek05LjUgOS41aDMuOHYxLjZoLjFjLjUtMSAxLjgtMiAzLjgtMiA0IDAgNC44IDIuNiA0LjggNlYyMWgtNHYtNS4xYzAtMS4yIDAtMi44LTEuNy0yLjhzLTIgMS4zLTIgMi43VjIxaC00eiIvPjwvc3ZnPg%3D%3D" height="36" alt="LinkedIn"></a>
+  <a href="https://www.instagram.com/dias.root/"><img src="https://img.shields.io/badge/instagram-5B4282?style=for-the-badge&logo=instagram&logoColor=white" height="36" alt="Instagram"></a>
 </p>
 
 Sou Analista de Dados, graduando em Engenharia de Software e em Direito, e trabalho com Engenharia e Governança de Dados.
