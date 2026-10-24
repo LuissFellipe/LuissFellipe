@@ -276,33 +276,33 @@ IDIOMA = [("Inglês C1 Advanced · 61/100", "EF SET", "2025")]
 
 
 def lista_cert(t, p, x, y, largura, rotulo, itens):
-    p.append(MONO.path(rotulo, x, y, 12, t["laranja"], espaco=0.08))
-    y += 36
+    p.append(MONO.path(rotulo, x, y, 13, t["laranja"], espaco=0.08))
+    y += 40
     for nome, inst, carga in itens:
-        linhas = TEXTO_B.quebrar(nome, 15, largura - 60)
+        linhas = TEXTO_B.quebrar(nome, 17, largura - 40)
         for i, l in enumerate(linhas):
-            p.append(TEXTO_B.path(l, x, y + i * 20, 15, t["tinta"]))
-        p.append(MONO.path(carga, x + largura, y, 12.5, t["roxo_txt"], ancora="end"))
-        y += 20 * (len(linhas) - 1)
-        p.append(TEXTO.path(inst, x, y + 20, 13, t["suave"]))
-        y += 46
+            p.append(TEXTO_B.path(l, x, y + i * 22, 17, t["tinta"]))
+        p.append(MONO.path(carga, x + largura, y, 14, t["roxo_txt"], ancora="end"))
+        y += 22 * (len(linhas) - 1)
+        p.append(TEXTO.path(inst, x, y + 22, 14.5, t["suave"]))
+        y += 52
     return y
 
 
 def formacao(t):
     W = 1000
-    p = [MONO.path("FORMAÇÃO", 40, 50, 12, t["laranja"], espaco=0.08)]
+    p = [MONO.path("FORMAÇÃO", 40, 50, 13, t["laranja"], espaco=0.08)]
     col = (W - 80) / 3
     yf = 0
     for i, (nome, inst, quando) in enumerate(FORMACAO):
-        x, y = 40 + i * col, 88
-        linhas = TITULO.quebrar(nome, 19, col - 24)
+        x, y = 40 + i * col, 92
+        linhas = TITULO.quebrar(nome, 21, col - 24)
         for j, l in enumerate(linhas):
-            p.append(TITULO.path(l, x, y + j * 23, 19, t["tinta"]))
-        y += 23 * (len(linhas) - 1)
-        p.append(TEXTO.path(inst, x, y + 23, 13.5, t["suave"]))
-        p.append(MONO.path(quando, x, y + 44, 12.5, t["roxo_txt"]))
-        yf = max(yf, y + 44)
+            p.append(TITULO.path(l, x, y + j * 26, 21, t["tinta"]))
+        y += 26 * (len(linhas) - 1)
+        p.append(TEXTO.path(inst, x, y + 26, 15, t["suave"]))
+        p.append(MONO.path(quando, x, y + 50, 14, t["roxo_txt"]))
+        yf = max(yf, y + 50)
     y0 = yf + 34
     p.append(f'<path d="M40 {y0}H{W - 40}" stroke="{t["borda"]}"/>')
     larg = (W - 80 - 60) / 2
@@ -326,5 +326,5 @@ for nome_tema, t in TEMAS.items():
     t["nome"] = nome_tema
     (SAIDA / f"header-{nome_tema}-2.svg").write_text(cabecalho(t))
     (SAIDA / f"stack-{nome_tema}-compacta.svg").write_text(stack(t))
-    (SAIDA / f"formacao-{nome_tema}-2.svg").write_text(formacao(t))
+    (SAIDA / f"formacao-{nome_tema}-3.svg").write_text(formacao(t))
 print("ok", len(list(SAIDA.glob("*.svg"))), "svgs")

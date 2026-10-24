@@ -26,8 +26,8 @@
 ### Formação e certificações
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="profile/formacao-dark-2.svg">
-  <img src="profile/formacao-light-2.svg" width="100%" alt="Formação: Engenharia de Software (Estácio, 2025–2029), Direito (Universidade Salgado de Oliveira, 2022–2027), Gestão de Segurança Pública e Privada (840 h). Certificações de tecnologia: ENAP Engenharia de Dados e IA, Data Science Academy (Engenharia de Dados e dois de Python), IFTM Inteligência Artificial I, Java Básico (Loiane Training), MIT Introdução à IA Generativa. Certificações de Direito: ENAP Como implementar a LGPD; IFRS Direito Administrativo, do Trabalho, Empresarial, Ambiental e Público. Idioma: Inglês C1 Advanced (EF SET).">
+  <source media="(prefers-color-scheme: dark)" srcset="profile/formacao-dark-3.svg">
+  <img src="profile/formacao-light-3.svg" width="100%" alt="Formação: Engenharia de Software (Estácio, 2025–2029), Direito (Universidade Salgado de Oliveira, 2022–2027), Gestão de Segurança Pública e Privada (840 h). Certificações de tecnologia: ENAP Engenharia de Dados e IA, Data Science Academy (Engenharia de Dados e dois de Python), IFTM Inteligência Artificial I, Java Básico (Loiane Training), MIT Introdução à IA Generativa. Certificações de Direito: ENAP Como implementar a LGPD; IFRS Direito Administrativo, do Trabalho, Empresarial, Ambiental e Público. Idioma: Inglês C1 Advanced (EF SET).">
 </picture>
 
 <sub>Certificado de inglês verificável em [cert.efset.org/en/W1vNup](https://cert.efset.org/en/W1vNup).</sub>
