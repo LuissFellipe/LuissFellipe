@@ -171,20 +171,25 @@ def cabecalho(t):
 # ---------------------------------------------------------------- stack
 LOGOS = Path(sys.argv[3]) if len(sys.argv) > 3 else None
 
+# None = desenhado aqui (SQL, governança); o resto é logotipo do devicon
 STACK = [
-    ("Linguagens", [("Python", "python-original"), ("SQL", None), ("JavaScript", "javascript-original"),
-                    ("TypeScript", "typescript-original"), ("Ruby", "ruby-original"), ("Rails", "rails-plain")]),
+    ("Linguagens", [("Python", "python-original"), ("SQL", "sql"), ("JavaScript", "javascript-original"),
+                    ("TypeScript", "typescript-original"), ("Ruby", "ruby-original"),
+                    ("Ruby on Rails", "rails-plain")]),
     ("Dados", [("PostgreSQL", "postgresql-original"), ("DuckDB", "duckdb-original"), ("dbt", "dbt-original"),
-               ("Airflow", "apacheairflow-original"), ("Spark", "apachespark-original"),
-               ("pandas", "pandas-original"), ("Jupyter", "jupyter-original")]),
-    ("Entrega", [("Docker", "docker-original"), ("Actions", "githubactions-original"),
-                 ("Grafana", "grafana-original"), ("Streamlit", "streamlit-original"),
-                 ("Git", "git-original"), ("Linux", "linux-original")]),
+               ("Apache Spark", "apachespark-original"), ("Pandas", "pandas-original"),
+               ("Jupyter", "jupyter-original"), ("Grafana", "grafana-original"),
+               ("Streamlit", "streamlit-original")]),
+    ("Orquestração", [("Apache Airflow", "apacheairflow-original"), ("Docker", "docker-original"),
+                      ("GitHub Actions", "githubactions-original"), ("Git", "git-original"),
+                      ("Linux", "linux-plain")]),
+    ("Governança", [("LGPD", "asterisco"), ("Minimização", "asterisco"), ("Retenção", "asterisco"),
+                    ("Controle de acesso", "asterisco"), ("Anonimização", "asterisco"),
+                    ("Arquitetura medalhão", "asterisco")]),
 ]
-GOVERNANCA = ["LGPD", "minimização", "retenção", "controle de acesso", "anonimização", "arquitetura medalhão"]
 
 
-def logo(nome, x, y, tam, n):
+def logo(nome, x, y, tam, n, t):
     # o SVG do logotipo vai embutido: imagem de README não carrega arquivo externo
     bruto = (LOGOS / f"{nome}.svg").read_text()
     vb = re.search(r'viewBox="([^"]+)"', bruto).group(1)
@@ -192,42 +197,54 @@ def logo(nome, x, y, tam, n):
     corpo = re.sub(r'id="([^"]+)"', rf'id="l{n}-\1"', corpo)
     corpo = re.sub(r"url\(#([^)]+)\)", rf"url(#l{n}-\1)", corpo)
     corpo = re.sub(r'href="#([^"]+)"', rf'href="#l{n}-\1"', corpo)
-    return f'<svg x="{x:.1f}" y="{y:.1f}" width="{tam}" height="{tam}" viewBox="{vb}">{corpo}</svg>'
+    # logotipos escuros somem no tema escuro: clareia o azul do pandas e
+    # inverte o pato do DuckDB (círculo amarelo, ponto escuro)
+    if t["nome"] == "dark":
+        corpo = corpo.replace("#130754", t["tinta"])
+        corpo = corpo.replace("#000000", "@@").replace("#fff100", t["fundo"]).replace("@@", "#fff100")
+    raiz = re.search(r'<svg[^>]*?\sfill="([^"]+)"', bruto)
+    cor = f' fill="{t["tinta"]}"' if nome == "linux-plain" else (f' fill="{raiz.group(1)}"' if raiz else "")
+    return f'<svg x="{x:.1f}" y="{y:.1f}" width="{tam}" height="{tam}" viewBox="{vb}"{cor}>{corpo}</svg>'
+
+
+def icone(arq, x, y, tam, n, t):
+    if arq == "asterisco":
+        return asterisco(x + tam / 2, y + tam / 2, tam * 0.36, t["laranja"], 2.4)
+    if arq == "sql":
+        # cilindro de banco de dados
+        cx, rx, ry, h = x + tam / 2, tam * 0.38, tam * 0.13, tam * 0.7
+        y0 = y + tam * 0.16
+        c = t["roxo_txt"]
+        return (f'<g fill="none" stroke="{c}" stroke-width="2">'
+                f'<ellipse cx="{cx}" cy="{y0}" rx="{rx}" ry="{ry}"/>'
+                f'<path d="M{cx - rx} {y0}V{y0 + h}A{rx} {ry} 0 0 0 {cx + rx} {y0 + h}V{y0}"/>'
+                f'<path d="M{cx - rx} {y0 + h / 2}A{rx} {ry} 0 0 0 {cx + rx} {y0 + h / 2}"/></g>')
+    return logo(arq, x, y, tam, n, t)
 
 
 def stack(t):
-    W, x_rot, x_ini, passo, lado = 1000, 40, 250, 104, 64
-    p, y, n = [], 34, 0
-    for grupo, itens in STACK:
-        p.append(MONO.path(grupo.upper(), x_rot, y + lado / 2 + 4, 12.5, t["laranja"], espaco=0.08))
-        for i, (rotulo, arq) in enumerate(itens):
-            cx = x_ini + i * passo + passo / 2
-            x = cx - lado / 2
-            p.append(f'<rect x="{x:.1f}" y="{y}" width="{lado}" height="{lado}" rx="16" '
-                     f'fill="{t["ladrilho"]}" stroke="{t["borda"]}"/>')
-            if arq:
-                p.append(logo(arq, x + 13, y + 13, lado - 26, n))
-                n += 1
-            else:
-                p.append(DISPLAY.path(rotulo, cx, y + lado / 2 + 7, 19, t["roxo"], ancora="middle"))
-            p.append(MONO.path(rotulo, cx, y + lado + 22, 12, t["tinta"], ancora="middle"))
-        y += lado + 50
-    p.append(f'<path d="M40 {y - 6}H{W - 40}" stroke="{t["borda"]}"/>')
-    y += 22
-    p.append(MONO.path("GOVERNANÇA", x_rot, y + 20, 12.5, t["laranja"], espaco=0.08))
-    x = x_ini + (passo - lado) / 2
-    for it in GOVERNANCA:
-        if x + MONO.largura(it, 13) + 20 > W - 40:
-            x = x_ini + (passo - lado) / 2
-            y += 38
-        c, w = chip(x, y, it, t, 13, fundo=t["chip"], cor=t["tinta"])
-        p.append(c)
-        x += w + 10
-    H = y + 58
+    W, x_rot, x_ini, ico, tam, gap, alt = 1000, 40, 230, 22, 15, 36, 46
+    p, y, n = [], 24, 0
+    for g, (grupo, itens) in enumerate(STACK):
+        if g:
+            p.append(f'<path d="M24 {y}H{W - 24}" stroke="{t["borda"]}"/>')
+        y += 14
+        p.append(MONO.path(grupo.upper(), x_rot, y + alt / 2 + 4, 12.5, t["laranja"], espaco=0.08))
+        x = x_ini
+        for rotulo, arq in itens:
+            w = ico + 11 + MONO.largura(rotulo, tam)
+            if x + w > W - 40:
+                x = x_ini
+                y += alt
+            p.append(icone(arq, x, y + (alt - ico) / 2, ico, n, t))
+            n += 1
+            p.append(MONO.path(rotulo, x + ico + 11, y + alt / 2 + tam * 0.36, tam, t["tinta"]))
+            x += w + gap
+        y += alt + 14
+    H = y + 10
     fundo = (f'<rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="16" '
              f'fill="{t["fundo"]}" stroke="{t["borda"]}"/>')
-    desc = "Stack: " + "; ".join(f"{g}: {', '.join(r for r, _ in i)}" for g, i in STACK) + \
-        "; Governança: " + ", ".join(GOVERNANCA)
+    desc = "Stack — " + ". ".join(f"{g}: {', '.join(r for r, _ in i)}" for g, i in STACK)
     return svg(W, H, fundo + "".join(p), desc)
 
 
@@ -280,7 +297,8 @@ def formacao(t):
 
 
 for nome_tema, t in TEMAS.items():
+    t["nome"] = nome_tema
     (SAIDA / f"header-{nome_tema}.svg").write_text(cabecalho(t))
-    (SAIDA / f"stack-logos-{nome_tema}.svg").write_text(stack(t))
+    (SAIDA / f"stack-lista-{nome_tema}.svg").write_text(stack(t))
     (SAIDA / f"formacao-{nome_tema}.svg").write_text(formacao(t))
 print("ok", len(list(SAIDA.glob("*.svg"))), "svgs")

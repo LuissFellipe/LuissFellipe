@@ -16,8 +16,8 @@ Graduando em Engenharia de Software e em Direito, trabalho com Engenharia e Gove
 ### Stack
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="profile/stack-logos-dark.svg">
-  <img src="profile/stack-logos-light.svg" width="100%" alt="Stack — Linguagens: Python, SQL, JavaScript, TypeScript, Ruby, Rails. Dados: PostgreSQL, DuckDB, dbt, Airflow, Spark, pandas, Jupyter. Entrega: Docker, GitHub Actions, Grafana, Streamlit, Git, Linux. Governança: LGPD, minimização, retenção, controle de acesso, anonimização, arquitetura medalhão.">
+  <source media="(prefers-color-scheme: dark)" srcset="profile/stack-lista-dark.svg">
+  <img src="profile/stack-lista-light.svg" width="100%" alt="Stack — Linguagens: Python, SQL, JavaScript, TypeScript, Ruby, Ruby on Rails. Dados: PostgreSQL, DuckDB, dbt, Apache Spark, Pandas, Jupyter, Grafana, Streamlit. Orquestração: Apache Airflow, Docker, GitHub Actions, Git, Linux. Governança: LGPD, minimização, retenção, controle de acesso, anonimização, arquitetura medalhão.">
 </picture>
 
 ### Estatísticas
