@@ -173,7 +173,7 @@ def cabecalho(t):
 # ---------------------------------------------------------------- stack
 LOGOS = Path(sys.argv[3]) if len(sys.argv) > 3 else None
 
-# "sql" é desenhado aqui, None fica só com o nome; o resto é logotipo do devicon
+# "sql" é desenhado aqui, None leva uma barra reta; o resto é logotipo do devicon
 STACK = [
     ("Linguagens", [("Python", "python-original"), ("SQL", "sql"), ("JavaScript", "javascript-original"),
                     ("TypeScript", "typescript-original"), ("Ruby", "ruby-original"),
@@ -211,7 +211,8 @@ def logo(nome, x, y, tam, n, t):
 
 def icone(arq, x, y, tam, n, t):
     if arq is None:
-        return ""
+        # barra reta no lugar do logotipo
+        return f'<rect x="{x}" y="{y + 3}" width="2.5" height="{tam - 6}" rx="1.25" fill="{t["laranja"]}"/>'
     if arq == "sql":
         # cilindro de banco de dados
         cx, rx, ry, h = x + tam / 2, tam * 0.38, tam * 0.13, tam * 0.7
@@ -234,7 +235,7 @@ def stack(t):
         p.append(MONO.path(grupo.upper(), x_rot, y + alt / 2 + 5, 14, t["laranja"], espaco=0.08))
         x = x_ini
         for rotulo, arq in itens:
-            recuo = ico + 11 if arq else 0
+            recuo = ico + 11 if arq else 13
             w = recuo + MONO.largura(rotulo, tam)
             if x + w > W - 40:
                 x = x_ini
@@ -363,7 +364,7 @@ def arcadius(t):
         else:
             x = x_ini
             for rotulo, arq in itens:
-                recuo = ico + 11 if arq else 0
+                recuo = ico + 11 if arq else 13
                 w = recuo + MONO.largura(rotulo, tam)
                 if x + w > W - 40:
                     x = x_ini
@@ -383,7 +384,7 @@ def arcadius(t):
 for nome_tema, t in TEMAS.items():
     t["nome"] = nome_tema
     (SAIDA / f"header-{nome_tema}-2.svg").write_text(cabecalho(t))
-    (SAIDA / f"stack-{nome_tema}-compacta-3.svg").write_text(stack(t))
+    (SAIDA / f"stack-{nome_tema}-compacta-4.svg").write_text(stack(t))
     (SAIDA / f"formacao-{nome_tema}-3.svg").write_text(formacao(t))
-    (SAIDA / f"arcadius-{nome_tema}-limpo.svg").write_text(arcadius(t))
+    (SAIDA / f"arcadius-{nome_tema}-barra.svg").write_text(arcadius(t))
 print("ok", len(list(SAIDA.glob("*.svg"))), "svgs")

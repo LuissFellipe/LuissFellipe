@@ -1,8 +1,8 @@
 ### Stack
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="profile/stack-dark-compacta-3.svg">
-  <img src="profile/stack-light-compacta-3.svg" width="100%" alt="Stack — Linguagens: Python, SQL, JavaScript, TypeScript, Ruby, Rails. Dados: PostgreSQL, DuckDB, dbt, Apache Spark, Pandas, Jupyter, Grafana, Streamlit. Orquestração: Apache Airflow, Docker, GitHub Actions, Git, Linux. Governança: LGPD, minimização, retenção, controle de acesso, anonimização, arquitetura medalhão.">
+  <source media="(prefers-color-scheme: dark)" srcset="profile/stack-dark-compacta-4.svg">
+  <img src="profile/stack-light-compacta-4.svg" width="100%" alt="Stack — Linguagens: Python, SQL, JavaScript, TypeScript, Ruby, Rails. Dados: PostgreSQL, DuckDB, dbt, Apache Spark, Pandas, Jupyter, Grafana, Streamlit. Orquestração: Apache Airflow, Docker, GitHub Actions, Git, Linux. Governança: LGPD, minimização, retenção, controle de acesso, anonimização, arquitetura medalhão.">
 </picture>
 
 <p align="center">
@@ -14,8 +14,8 @@
 <br>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="profile/arcadius-dark-limpo.svg">
-  <img src="profile/arcadius-light-limpo.svg" width="100%" alt="Arcadius Academy. Problema: quem estuda para concurso monta o cronograma à mão, cruzando o edital, o peso de cada matéria e as horas livres, e refaz tudo quando a rotina muda. O que faz: monta o cronograma a partir do edital e o adapta à rotina do aluno, com revisão espaçada, banco de questões e XP, ofensiva e ranking. Trilhas: Policial, Tech, Juris. Stack: Ruby, Rails 8, PostgreSQL, Redis, Sidekiq, Hotwire, Docker, GitHub Actions. No ar: algumas dezenas de usuários reais, 5.327 testes automatizados.">
+  <source media="(prefers-color-scheme: dark)" srcset="profile/arcadius-dark-barra.svg">
+  <img src="profile/arcadius-light-barra.svg" width="100%" alt="Arcadius Academy. Problema: quem estuda para concurso monta o cronograma à mão, cruzando o edital, o peso de cada matéria e as horas livres, e refaz tudo quando a rotina muda. O que faz: monta o cronograma a partir do edital e o adapta à rotina do aluno, com revisão espaçada, banco de questões e XP, ofensiva e ranking. Trilhas: Policial, Tech, Juris. Stack: Ruby, Rails 8, PostgreSQL, Redis, Sidekiq, Hotwire, Docker, GitHub Actions. No ar: algumas dezenas de usuários reais, 5.327 testes automatizados.">
 </picture>
 
 <p align="center">
