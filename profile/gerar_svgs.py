@@ -173,7 +173,7 @@ def cabecalho(t):
 # ---------------------------------------------------------------- stack
 LOGOS = Path(sys.argv[3]) if len(sys.argv) > 3 else None
 
-# None = desenhado aqui (SQL, governança); o resto é logotipo do devicon
+# "sql" é desenhado aqui, None fica só com o nome; o resto é logotipo do devicon
 STACK = [
     ("Linguagens", [("Python", "python-original"), ("SQL", "sql"), ("JavaScript", "javascript-original"),
                     ("TypeScript", "typescript-original"), ("Ruby", "ruby-original"),
@@ -185,9 +185,9 @@ STACK = [
     ("Orquestração", [("Apache Airflow", "apacheairflow-original"), ("Docker", "docker-original"),
                       ("GitHub Actions", "githubactions-original"), ("Git", "git-original"),
                       ("Linux", "linux-plain")]),
-    ("Governança", [("LGPD", "asterisco"), ("Minimização", "asterisco"), ("Retenção", "asterisco"),
-                    ("Controle de acesso", "asterisco"), ("Anonimização", "asterisco"),
-                    ("Arquitetura medalhão", "asterisco")]),
+    ("Governança", [("LGPD", None), ("Minimização", None), ("Retenção", None),
+                    ("Controle de acesso", None), ("Anonimização", None),
+                    ("Arquitetura medalhão", None)]),
 ]
 
 
@@ -210,8 +210,8 @@ def logo(nome, x, y, tam, n, t):
 
 
 def icone(arq, x, y, tam, n, t):
-    if arq == "asterisco":
-        return asterisco(x + tam / 2, y + tam / 2, tam * 0.36, t["laranja"], 2.4)
+    if arq is None:
+        return ""
     if arq == "sql":
         # cilindro de banco de dados
         cx, rx, ry, h = x + tam / 2, tam * 0.38, tam * 0.13, tam * 0.7
@@ -234,13 +234,14 @@ def stack(t):
         p.append(MONO.path(grupo.upper(), x_rot, y + alt / 2 + 5, 14, t["laranja"], espaco=0.08))
         x = x_ini
         for rotulo, arq in itens:
-            w = ico + 11 + MONO.largura(rotulo, tam)
+            recuo = ico + 11 if arq else 0
+            w = recuo + MONO.largura(rotulo, tam)
             if x + w > W - 40:
                 x = x_ini
                 y += alt
             p.append(icone(arq, x, y + (alt - ico) / 2, ico, n, t))
             n += 1
-            p.append(MONO.path(rotulo, x + ico + 11, y + alt / 2 + tam * 0.36, tam, t["tinta"]))
+            p.append(MONO.path(rotulo, x + recuo, y + alt / 2 + tam * 0.36, tam, t["tinta"]))
             x += w + gap
         y += alt + 6
     H = y
@@ -329,11 +330,11 @@ ARCADIUS = [
     ("O que faz", "Monta o cronograma a partir do edital e o adapta à rotina do aluno: os dias, as "
                   "horas e as matérias que ainda pesam. Tem revisão espaçada, banco de questões e "
                   "XP, ofensiva e ranking."),
-    ("Trilhas", [("Policial", "asterisco"), ("Tech", "asterisco"), ("Juris", "asterisco")]),
+    ("Trilhas", [("Policial", None), ("Tech", None), ("Juris", None)]),
     ("Stack", [("Ruby", "ruby-original"), ("Rails 8", "rails-plain"), ("PostgreSQL", "postgresql-original"),
-               ("Redis", "redis-original"), ("Sidekiq", "asterisco"), ("Hotwire", "asterisco"),
+               ("Redis", "redis-original"), ("Sidekiq", None), ("Hotwire", None),
                ("Docker", "docker-original"), ("GitHub Actions", "githubactions-original")]),
-    ("No ar", [("Algumas dezenas de usuários reais", "asterisco"), ("5.327 testes automatizados", "asterisco")]),
+    ("No ar", [("Algumas dezenas de usuários reais", None), ("5.327 testes automatizados", None)]),
 ]
 
 
@@ -343,9 +344,7 @@ def arcadius(t):
     rotulo = "PROJETO EM DESTAQUE"
     wr = MONO.largura(rotulo, 14, 0.12)
     meio = W / 2
-    p = [f'<path d="M0 30H{meio - wr / 2 - 44}M{meio + wr / 2 + 44} 30H{W}" stroke="{t["laranja"]}" stroke-width="1.5"/>',
-         asterisco(meio - wr / 2 - 24, 30, 8, t["laranja"], 3),
-         asterisco(meio + wr / 2 + 24, 30, 8, t["laranja"], 3),
+    p = [f'<path d="M0 30H{meio - wr / 2 - 20}M{meio + wr / 2 + 20} 30H{W}" stroke="{t["laranja"]}" stroke-width="1.5"/>',
          MONO.path(rotulo, meio - wr / 2, 35, 14, t["laranja"], espaco=0.12)]
     p.append(DISPLAY.path("Arcadius", x_rot - 3, 124, 60, t["tinta"], espaco=-0.025))
     p.append(ITALICO.path("Academy", x_rot + DISPLAY.largura("Arcadius", 60, -0.025) + 12, 124, 48, t["roxo_txt"]))
@@ -364,13 +363,14 @@ def arcadius(t):
         else:
             x = x_ini
             for rotulo, arq in itens:
-                w = ico + 11 + MONO.largura(rotulo, tam)
+                recuo = ico + 11 if arq else 0
+                w = recuo + MONO.largura(rotulo, tam)
                 if x + w > W - 40:
                     x = x_ini
                     y += alt
                 p.append(icone(arq, x, y + (alt - ico) / 2, ico, n, t))
                 n += 1
-                p.append(MONO.path(rotulo, x + ico + 11, y + alt / 2 + tam * 0.36, tam, t["tinta"]))
+                p.append(MONO.path(rotulo, x + recuo, y + alt / 2 + tam * 0.36, tam, t["tinta"]))
                 x += w + gap
         y += alt + 6
     # barra laranja à esquerda: marca o bloco como projeto, não como lista de ferramentas
@@ -383,7 +383,7 @@ def arcadius(t):
 for nome_tema, t in TEMAS.items():
     t["nome"] = nome_tema
     (SAIDA / f"header-{nome_tema}-2.svg").write_text(cabecalho(t))
-    (SAIDA / f"stack-{nome_tema}-compacta-2.svg").write_text(stack(t))
+    (SAIDA / f"stack-{nome_tema}-compacta-3.svg").write_text(stack(t))
     (SAIDA / f"formacao-{nome_tema}-3.svg").write_text(formacao(t))
-    (SAIDA / f"arcadius-{nome_tema}-titulo.svg").write_text(arcadius(t))
+    (SAIDA / f"arcadius-{nome_tema}-limpo.svg").write_text(arcadius(t))
 print("ok", len(list(SAIDA.glob("*.svg"))), "svgs")
