@@ -11,14 +11,16 @@
   <a href="https://www.instagram.com/dias.root/"><img src="https://img.shields.io/badge/instagram-5B4282?style=for-the-badge&logo=instagram&logoColor=white" height="36" alt="Instagram"></a>
 </p>
 
-### Projeto em destaque
+### Projeto em destaque · Arcadius Academy
 
-<a href="https://arcadiusacademy.com.br">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="profile/arcadius-dark.svg">
-  <img src="profile/arcadius-light.svg" width="100%" alt="Arcadius Academy — monta o cronograma de estudos para concursos públicos a partir do edital e o adapta à rotina do aluno. Trilhas Policial, Tech e Juris. Rails 8, PostgreSQL, Sidekiq + Redis, Hotwire, 5.327 testes.">
+  <source media="(prefers-color-scheme: dark)" srcset="profile/arcadius-dark-lista.svg">
+  <img src="profile/arcadius-light-lista.svg" width="100%" alt="Arcadius Academy. Problema: quem estuda para concurso monta o cronograma à mão, cruzando o edital, o peso de cada matéria e as horas livres, e refaz tudo quando a rotina muda. O que faz: monta o cronograma a partir do edital e o adapta à rotina do aluno, com revisão espaçada, banco de questões e XP, ofensiva e ranking. Trilhas: Policial, Tech, Juris. Stack: Ruby, Rails 8, PostgreSQL, Redis, Sidekiq, Hotwire, Docker, GitHub Actions. No ar: algumas dezenas de usuários reais, 5.327 testes automatizados.">
 </picture>
-</a>
+
+<p align="center">
+  <a href="https://arcadiusacademy.com.br"><img src="https://img.shields.io/badge/acessar%20o%20arcadius-E2620E?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI%2BPHBhdGggZD0iTTQgMTJoMTVNMTMgNmw2IDYtNiA2Ii8%2BPC9zdmc%2B" height="36" alt="Acessar o Arcadius Academy"></a>
+</p>
 
 ### Estatísticas
 
