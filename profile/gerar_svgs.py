@@ -321,10 +321,62 @@ def formacao(t):
     return svg(W, H, fundo + "".join(p), desc)
 
 
+# ---------------------------------------------------------------- destaque
+def arcadius(t):
+    W, H = 1000, 330
+    p = [f'<rect width="{W}" height="{H}" rx="18" fill="{t["fundo"]}"/>']
+    linhas = "".join(f"M{x} 0V{H}" for x in range(24, W, 24)) + "".join(
+        f"M0 {y}H{W}" for y in range(24, H, 24)
+    )
+    p.append(f'<path d="{linhas}" stroke="{t["grade"]}" stroke-width="1" fill="none"/>')
+    p.append(f'<rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="18" fill="none" stroke="{t["borda"]}"/>')
+
+    x0 = 48
+    p.append(asterisco(x0 + 9, 58, 9, t["laranja"], 3.2))
+    p.append(MONO.path("PROJETO EM DESTAQUE · NO AR", x0 + 28, 63, 14, t["laranja"], espaco=0.08))
+    p.append(DISPLAY.path("Arcadius", x0 - 3, 132, 68, t["tinta"], espaco=-0.025))
+    p.append(ITALICO.path("Academy", x0 + DISPLAY.largura("Arcadius", 68, -0.025) + 14, 132, 54, t["roxo_txt"]))
+
+    # frase do próprio site, sem promessa que o dono não fez
+    frase = ("Monta o cronograma de estudos para concursos públicos a partir do edital "
+             "e o adapta à rotina do aluno: os dias, as horas e as matérias que ainda pesam.")
+    linhas = TEXTO.quebrar(frase, 17, 560)
+    assert len(linhas) <= 3, linhas
+    y = 176
+    for linha in linhas:
+        p.append(TEXTO.path(linha, x0, y, 17, t["suave"]))
+        y += 25
+
+    x, yb = x0, 262
+    for i, e in enumerate(["Rails 8", "PostgreSQL", "Sidekiq + Redis", "Hotwire", "5.327 testes"]):
+        ultimo = i == 4
+        c, w = chip(x, yb, e, t, 13, fundo=t["roxo"] if ultimo else t["chip"],
+                    cor="#FFFFFF" if ultimo else t["suave"])
+        p.append(c)
+        x += w + 8
+
+    # as três trilhas do site, no mesmo jogo de cartões do cabeçalho
+    def cartao(x, y, rot, fundo, nome, sub, cor_txt, cor_sub):
+        return "".join([
+            f'<g transform="rotate({rot} {x + 130} {y + 42})">',
+            f'<rect x="{x + 6}" y="{y + 8}" width="260" height="84" rx="14" fill="{t["sombra"]}" opacity="0.14"/>',
+            f'<rect x="{x}" y="{y}" width="260" height="84" rx="14" fill="{fundo}" stroke="{t["borda"]}"/>',
+            MONO.path("TRILHA", x + 20, y + 28, 11, cor_sub, espaco=0.08),
+            TITULO.path(nome, x + 20, y + 60, 25, cor_txt),
+            MONO.path(sub, x + 240, y + 60, 12, cor_sub, ancora="end"),
+            "</g>"])
+
+    p.append(cartao(668, 40, -4, t["cartao"], "Policial", "PM · PC · CBM", t["tinta"], t["suave"]))
+    p.append(cartao(700, 136, 2, t["roxo"], "Tech", "TI · dados", "#FFFFFF", "#E4DAF5"))
+    p.append(cartao(676, 228, -2, t["cartao"], "Juris", "OAB", t["tinta"], t["suave"]))
+    p.append(asterisco(952, 300, 14, t["laranja"], 4.5))
+    return svg(W, H, "".join(p), "Arcadius Academy — cronograma de estudos para concursos montado a partir do edital")
+
 
 for nome_tema, t in TEMAS.items():
     t["nome"] = nome_tema
     (SAIDA / f"header-{nome_tema}-2.svg").write_text(cabecalho(t))
     (SAIDA / f"stack-{nome_tema}-compacta-2.svg").write_text(stack(t))
     (SAIDA / f"formacao-{nome_tema}-3.svg").write_text(formacao(t))
+    (SAIDA / f"arcadius-{nome_tema}.svg").write_text(arcadius(t))
 print("ok", len(list(SAIDA.glob("*.svg"))), "svgs")

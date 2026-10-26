@@ -1,6 +1,8 @@
+### Stack
+
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="profile/header-dark-2.svg">
-  <img src="profile/header-light-2.svg" width="100%" alt="Luis Felipe Dias Gomes — Engenharia e Governança de Dados. Sou Analista de Dados, graduando em Engenharia de Software e em Direito, e trabalho com Engenharia e Governança de Dados.">
+  <source media="(prefers-color-scheme: dark)" srcset="profile/stack-dark-compacta-2.svg">
+  <img src="profile/stack-light-compacta-2.svg" width="100%" alt="Stack — Linguagens: Python, SQL, JavaScript, TypeScript, Ruby, Rails. Dados: PostgreSQL, DuckDB, dbt, Apache Spark, Pandas, Jupyter, Grafana, Streamlit. Orquestração: Apache Airflow, Docker, GitHub Actions, Git, Linux. Governança: LGPD, minimização, retenção, controle de acesso, anonimização, arquitetura medalhão.">
 </picture>
 
 <p align="center">
@@ -9,12 +11,14 @@
   <a href="https://www.instagram.com/dias.root/"><img src="https://img.shields.io/badge/instagram-5B4282?style=for-the-badge&logo=instagram&logoColor=white" height="36" alt="Instagram"></a>
 </p>
 
-### Stack
+### Projeto em destaque
 
+<a href="https://arcadiusacademy.com.br">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="profile/stack-dark-compacta-2.svg">
-  <img src="profile/stack-light-compacta-2.svg" width="100%" alt="Stack — Linguagens: Python, SQL, JavaScript, TypeScript, Ruby, Rails. Dados: PostgreSQL, DuckDB, dbt, Apache Spark, Pandas, Jupyter, Grafana, Streamlit. Orquestração: Apache Airflow, Docker, GitHub Actions, Git, Linux. Governança: LGPD, minimização, retenção, controle de acesso, anonimização, arquitetura medalhão.">
+  <source media="(prefers-color-scheme: dark)" srcset="profile/arcadius-dark.svg">
+  <img src="profile/arcadius-light.svg" width="100%" alt="Arcadius Academy — monta o cronograma de estudos para concursos públicos a partir do edital e o adapta à rotina do aluno. Trilhas Policial, Tech e Juris. Rails 8, PostgreSQL, Sidekiq + Redis, Hotwire, 5.327 testes.">
 </picture>
+</a>
 
 ### Estatísticas
 
