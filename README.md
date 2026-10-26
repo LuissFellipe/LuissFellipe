@@ -11,11 +11,11 @@
   <a href="https://www.instagram.com/dias.root/"><img src="https://img.shields.io/badge/instagram-5B4282?style=for-the-badge&logo=instagram&logoColor=white" height="36" alt="Instagram"></a>
 </p>
 
-### Projeto em destaque · Arcadius Academy
+<br>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="profile/arcadius-dark-lista.svg">
-  <img src="profile/arcadius-light-lista.svg" width="100%" alt="Arcadius Academy. Problema: quem estuda para concurso monta o cronograma à mão, cruzando o edital, o peso de cada matéria e as horas livres, e refaz tudo quando a rotina muda. O que faz: monta o cronograma a partir do edital e o adapta à rotina do aluno, com revisão espaçada, banco de questões e XP, ofensiva e ranking. Trilhas: Policial, Tech, Juris. Stack: Ruby, Rails 8, PostgreSQL, Redis, Sidekiq, Hotwire, Docker, GitHub Actions. No ar: algumas dezenas de usuários reais, 5.327 testes automatizados.">
+  <source media="(prefers-color-scheme: dark)" srcset="profile/arcadius-dark-titulo.svg">
+  <img src="profile/arcadius-light-titulo.svg" width="100%" alt="Arcadius Academy. Problema: quem estuda para concurso monta o cronograma à mão, cruzando o edital, o peso de cada matéria e as horas livres, e refaz tudo quando a rotina muda. O que faz: monta o cronograma a partir do edital e o adapta à rotina do aluno, com revisão espaçada, banco de questões e XP, ofensiva e ranking. Trilhas: Policial, Tech, Juris. Stack: Ruby, Rails 8, PostgreSQL, Redis, Sidekiq, Hotwire, Docker, GitHub Actions. No ar: algumas dezenas de usuários reais, 5.327 testes automatizados.">
 </picture>
 
 <p align="center">
